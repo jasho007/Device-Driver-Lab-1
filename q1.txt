@@ -1,0 +1,62 @@
+
+EXERCISE-1
+
+CED17I034
+
+Q)List at least 10 Daemons running in your machine and explain each in one or two lines (soft copy only, just text file).
+
+
+1)udevd - event managing daemon
+	udevd listens to kernel uevents and passes the incoming events to udev. It ensures the correct event 
+	order and takes care, that events for child devices are delayed until the parent event has finished 
+	the device handling.
+
+2)LVMETAD - THE METADATA DAEMON  
+	The metadata daemon has two main purposes: It improves performance of LVM commands and it allows udev
+	to automatically activate logical volumes or entire volume groups as they become available to the
+	system.
+
+3)acpid - Advanced Configuration and Power Interface event daemon
+	acpid is designed to notify user-space programs of ACPI events. acpid should be started during the
+	system boot, and will run as a background process, by default. It will open an events file (/proc/acpi
+	event by default) and attempt to read whole lines. When a line is received (an event), acpid will
+	examine a list of rules, and execute the rules that match the event.
+
+4)udisksd - The udisks system daemon
+	The udisksd program provides the org.freedesktop.UDisks2 name on the system message bus. Users or
+	administrators should never need to start this daemon as it will be automatically started by
+	dbus-daemon(1) or systemd(1) whenever an application tries to access its D-Bus interfaces.
+
+5)systemd 
+	systemd is a suite of basic building blocks for a Linux system. It provides a system and service
+	manager that runs as PID 1 and starts the rest of the system. systemd provides aggressive
+	parallelization capabilities, uses socket and D-Bus activation for starting services, offers on-demand
+	starting of daemons, keeps track of processes using Linux control groups, maintains mount and
+	automount points, and implements an elaborate transactional dependency-based service control logic
+
+6)colord
+	system service to manage device colour profiles 
+
+7)systemd-logind
+	systemd-logind is a system service that manages user logins.
+	Keeping track of users and sessions, their processes and their idle state. This is implemented by 
+	allocating a systemd slice unit for each user below user.slice, and a scope unit below it for each 
+	concurrent session of a user. Also, a per-user service manager is started as system service instance 
+	of user@.service for each logged in user.
+
+8)bluetoothd
+	daemon  which manages all the Bluetooth devices. bluetoothd itself does not accept many command-line 
+	options, as most of its configuration is done in the /etc/bluetooth/main.conf file, which has its own 
+	man page. bluetoothd can also provide a number of services via the D-Bus message bus system.
+
+9)systemd-resolved
+	is a system service that provides network name resolution to local applications. It implements a 
+	caching and validating DNS/DNSSEC stub resolver, as well as an LLMNR and MulticastDNS resolver and 
+	responder. 
+
+10)systemd-journald
+	systemd-journald is a system service that collects and stores logging data. It creates and maintains 
+	structured, indexed journals based on logging information that is received from the kernel, from user 
+	processes via the libc syslog call, from standard input and standard error of system services or via 
+	its native API.
+
